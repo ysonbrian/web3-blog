@@ -29,27 +29,33 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
+        name: "page",
+        label: "Pages",
         path: "content/posts",
+        format: "mdx",
         fields: [
           {
-            type: "string",
             name: "title",
+            type: "string",
             label: "Title",
             isTitle: true,
             required: true,
           },
           {
-            type: "rich-text",
             name: "body",
+            type: "rich-text",
             label: "Body",
             isBody: true,
           },
         ],
         ui: {
           // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`,
+          router: ({ document }) => {
+            if (document._sys.filename === "home") {
+              return `/`
+            }
+            return undefined
+          },
         },
       },
     ],
