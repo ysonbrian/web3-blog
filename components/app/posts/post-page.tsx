@@ -1,24 +1,24 @@
 "use client"
 
-import { PageQuery } from "@/tina/__generated__/types"
+import { PostQuery } from "@/tina/__generated__/types"
 import { tinaField, useTina } from "tinacms/dist/react"
 import { TinaMarkdown } from "tinacms/dist/rich-text"
 
-export function PageComponent(props: {
-  data: PageQuery
+export function PostPageComponent(props: {
+  data: PostQuery
   variables: {
     relativePath: string
   }
   query: string
 }) {
   const { data } = useTina(props)
-  const title = data.page.title
-  const content = data.page.body
+  const title = data.post.title
+  const content = data.post.body
 
   return (
     <article>
-      <h1 data-tina-field={tinaField(data.page, "title")}>{title}</h1>
-      <section data-tina-field={tinaField(data.page, "body")}>
+      <h1 data-tina-field={tinaField(data.post, "title")}>{title}</h1>
+      <section data-tina-field={tinaField(data.post, "body")}>
         <TinaMarkdown content={content} />
       </section>
     </article>

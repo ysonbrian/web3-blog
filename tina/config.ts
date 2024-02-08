@@ -31,7 +31,7 @@ export default defineConfig({
       {
         name: "page",
         label: "Pages",
-        path: "content/posts",
+        path: "content/page",
         format: "mdx",
         fields: [
           {
@@ -55,6 +55,89 @@ export default defineConfig({
               return `/`
             }
             return undefined
+          },
+        },
+      },
+      {
+        name: "post",
+        label: "Posts",
+        path: "content/post",
+        format: "mdx",
+        fields: [
+          {
+            name: "title",
+            type: "string",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            name: "date",
+            type: "datetime",
+            label: "Date",
+            required: true,
+          },
+          {
+            name: "body",
+            type: "rich-text",
+            label: "Body",
+            isBody: true,
+          },
+        ],
+        defaultItem: () => {
+          return {
+            title: "",
+            date: new Date(),
+          }
+        },
+        ui: {
+          // This is an DEMO router. You can remove this to fit your site
+          router: ({ document }) => {
+            return `/posts/${document._sys.filename}`
+          },
+          filename: {
+            slugify: (values) => {
+              return `${(values.title || "").toLowerCase().replace(/ /g, "-")}`.replace(
+                /[^w\.\/-\s]/gi,
+                "",
+              )
+            },
+          },
+        },
+      },
+      {
+        name: "project",
+        label: "Projects",
+        path: "content/project",
+        fields: [
+          {
+            name: "title",
+            type: "string",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            name: "description",
+            type: "string",
+            label: "Description",
+            required: true,
+          },
+          {
+            name: "link",
+            type: "string",
+            label: "Link",
+            required: true,
+          },
+        ],
+        ui: {
+          filename: {
+            slugify: (values) => {
+              return `${(values.title || "").toLowerCase().replace(/ /g, "-")}`.replace(
+                /[^w\.\/-\s]/gi,
+                "",
+              )
+            },
           },
         },
       },

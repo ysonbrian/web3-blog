@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import { Inter as FontSans } from "next/font/google"
 import "@/styles/globals.css"
-import { cn } from "@/lib/utils"
-import { ThemeProvider } from "@/components/theme-provider"
-import Navbar from "@/components/navbar"
+import { ThemeProvider } from "@/components/ThemeProvider"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -29,11 +29,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="prose-xl dark:prose-invert mx-auto my-20 w-full max-w-4xl px-4 md:px-0">
+          <div className="prose-xl mx-auto my-20 w-full max-w-4xl px-4 dark:prose-invert md:px-0">
             <main>
-              <Navbar />
+              <Header />
               {children}
             </main>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
