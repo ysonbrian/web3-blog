@@ -28,7 +28,6 @@ export default function RootLayout({
         >
           <div className="prose-xl mx-auto my-20 w-full max-w-4xl px-4 dark:prose-invert md:px-0">
             <main>
-              s
               <Header />
               {children}
             </main>
