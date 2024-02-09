@@ -2,7 +2,6 @@
 
 import LinkCard from "@/components/LinkCard"
 import { ProjectConnectionQuery } from "@/tina/__generated__/types"
-import Link from "next/link"
 import { useTina } from "tinacms/dist/react"
 
 export default function ProjectListPageComponent(props: {

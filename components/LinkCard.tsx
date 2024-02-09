@@ -20,7 +20,7 @@ export default function LinkCard({
     >
       <article className="p-4 md:p-8">
         <h2
-          className="group-hover:text-blackdark:text-zinc-200 z-20 text-xl font-medium text-zinc-800 dark:group-hover:text-white lg:text-3xl
+          className="z-20 text-xl font-medium text-zinc-800 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white lg:text-3xl
         "
         >
           {title}
