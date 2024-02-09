@@ -1,14 +1,11 @@
 import type { Metadata } from "next"
-import { Inter as FontSans } from "next/font/google"
+import { Inter } from "next/font/google"
 import "@/styles/globals.css"
 import { ThemeProvider } from "@/components/ThemeProvider"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "ysonbrian Blog",
@@ -22,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true} className={inter.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

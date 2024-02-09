@@ -18,7 +18,7 @@ export default function ProjectListPageComponent(props: {
   return (
     <>
       <h1>My Projects</h1>
-      <div className="mx-auth grid grid-cols-1 gap-4 md:grid-cols-3 lg:mx-0">
+      <div className="mx-auto grid grid-cols-1 gap-4 md:grid-cols-3 lg:mx-0">
         <div className="grid grid-cols-1 gap-4">
           {projectList
             .filter((_: any, i: number) => i % 3 === 0)

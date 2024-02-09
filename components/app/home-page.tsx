@@ -17,7 +17,7 @@ export function HomePageComponent(props: {
   const postList = data.postConnection.edges
 
   return (
-    <section className="prose-xcl mx-auto w-full max-w-4xl dark:prose-invert">
+    <section className="prose-xl mx-auto w-full max-w-4xl dark:prose-invert">
       <h1 data-tina-field={tinaField(data.page, "title")}>{title}</h1>
       <article data-tina-field={tinaField(data.page, "body")}>
         <TinaMarkdown content={content} />
