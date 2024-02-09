@@ -1,6 +1,6 @@
 "use client"
 
-import { HomePageQuery, PageQuery } from "@/tina/__generated__/types"
+import { HomePageQuery } from "@/tina/__generated__/types"
 import Link from "next/link"
 import { tinaField, useTina } from "tinacms/dist/react"
 import { TinaMarkdown } from "tinacms/dist/rich-text"
@@ -15,7 +15,6 @@ export function HomePageComponent(props: {
   const content = data.page.body
 
   const postList = data.postConnection.edges
-
   return (
     <section className="prose-xl mx-auto w-full max-w-4xl dark:prose-invert">
       <h1 data-tina-field={tinaField(data.page, "title")}>{title}</h1>
