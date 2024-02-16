@@ -1,12 +1,13 @@
 import dynamic from "next/dynamic"
 import { Tweet } from "react-tweet"
-import { TinaMarkdown } from "tinacms/dist/rich-text"
+import SyntaxHighlighter from "react-syntax-highlighter"
+import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/hljs"
 
 export const TextBox = (props: any) => {
   return (
     <>
       <div className="bg-gray-100 p-8 py-1 text-gray-700 dark:bg-gray-900 dark:text-gray-300">
-        <TinaMarkdown content={props.text} />
+        {/* <TinaMarkdown content={props.text} /> */}
       </div>
     </>
   )
@@ -47,5 +48,13 @@ export const CaptionedImage = (props: any) => {
       <img style={{ maxWidth: "100%" }} src={props.imgUrl} alt={props.alt} />
       <figcaption className="text-[.8em]">{props.caption}</figcaption>
     </figure>
+  )
+}
+
+export const CodeBlock = ({ code, lang }: { code: string; lang: string }) => {
+  return (
+    <SyntaxHighlighter language={lang || "typescript"} style={nightOwl}>
+      {code}
+    </SyntaxHighlighter>
   )
 }

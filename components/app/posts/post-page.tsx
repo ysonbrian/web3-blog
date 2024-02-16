@@ -9,6 +9,7 @@ import {
   PullQuote,
   CaptionedImage,
   VideoPlayer,
+  CodeBlock,
 } from "@/components/RichText"
 export function PostPageComponent(props: {
   data: PostQuery
@@ -20,6 +21,9 @@ export function PostPageComponent(props: {
   const { data } = useTina(props)
   const title = data.post.title
   const content = data.post.body
+  const code_block = data.post.body.children.filter(
+    (data: any) => data.type === "code_block",
+  )
 
   return (
     <article>
@@ -32,6 +36,17 @@ export function PostPageComponent(props: {
             PullQuote,
             CaptionedImage,
             VideoPlayer,
+            code_block: () => {
+              return (
+                <>
+                  {code_block.map((code: any, number: any) => (
+                    <li key={number} className="list-none">
+                      <CodeBlock code={code.value} lang={code.lang} />
+                    </li>
+                  ))}
+                </>
+              )
+            },
           }}
           content={content}
         />
