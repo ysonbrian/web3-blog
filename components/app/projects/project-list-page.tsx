@@ -14,7 +14,6 @@ export default function ProjectListPageComponent(props: {
   if (!projectList) {
     return
   }
-  console.log("projectList", projectList)
   return (
     <>
       <h1>My Projects</h1>

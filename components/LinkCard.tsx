@@ -13,7 +13,6 @@ export default function LinkCard({
   description: string
   img?: any
 }) {
-  console.log("img", img)
   return (
     <Link
       href={link}
