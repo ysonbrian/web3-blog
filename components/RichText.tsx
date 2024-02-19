@@ -2,12 +2,13 @@ import dynamic from "next/dynamic"
 import { Tweet } from "react-tweet"
 import SyntaxHighlighter from "react-syntax-highlighter"
 import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/hljs"
+import { TinaMarkdown } from "tinacms/dist/rich-text"
 
 export const TextBox = (props: any) => {
   return (
     <>
       <div className="bg-gray-100 p-8 py-1 text-gray-700 dark:bg-gray-900 dark:text-gray-300">
-        {/* <TinaMarkdown content={props.text} /> */}
+        <TinaMarkdown content={props.text} />
       </div>
     </>
   )
