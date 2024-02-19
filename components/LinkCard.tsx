@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 
@@ -5,24 +6,23 @@ export default function LinkCard({
   link,
   title,
   description,
+  img,
 }: {
   link: string
   title: string
   description: string
+  img?: any
 }) {
+  console.log("img", img)
   return (
     <Link
       href={link}
       target="_blank"
-      className="group relative overflow-hidden rounded-xl border border-zinc-200 
-      hover:border-zinc-800/50 hover:bg-zinc-400/10 dark:border-zinc-600 
-      dark:hover:border-zinc-400/50 dark:hover:bg-zinc-800/10 md:gap-8"
+      className={`background-image: group relative h-fit min-h-[320px] max-w-[500px] overflow-hidden rounded-xl border border-zinc-200 hover:border-zinc-800/50 hover:bg-zinc-400/10 dark:border-zinc-600 dark:hover:border-zinc-400/50 dark:hover:bg-zinc-800/10 md:gap-8`}
     >
-      <article className="p-4 md:p-8">
-        <h2
-          className="z-20 text-xl font-medium text-zinc-800 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white lg:text-3xl
-        "
-        >
+      <Image src={img} alt="title" width={500} height={500} className="my-0" />
+      <article className="px-4 md:px-8">
+        <h2 className="z-20 text-lg font-medium text-zinc-800 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white">
           {title}
         </h2>
         <p

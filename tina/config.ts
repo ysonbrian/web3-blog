@@ -138,6 +138,11 @@ export default defineConfig({
             label: "Link",
             required: true,
           },
+          {
+            type: "image",
+            label: "Project_Image",
+            name: "project_image",
+          },
         ],
         ui: {
           filename: {

@@ -1,5 +1,0 @@
----
-title: JSON Schema Autodoc
-description: A simple json file to make it a note
-link: "https://github.com/ysonbrian"
----

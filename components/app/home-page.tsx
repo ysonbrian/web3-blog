@@ -26,9 +26,9 @@ export function HomePageComponent(props: {
         <section>
           <h2 className="mt-8 text-3xl">Latest Posts</h2>
           <ul className="list-[circle]">
-            {postList.map((edge: any) => {
+            {postList.map((edge: any, index: number) => {
               return (
-                <li key={edge.node} className="my-0">
+                <li key={index} className="my-0">
                   <Link href={`/posts/${edge.node._sys.filename}`}>
                     {edge.node.title}
                     <span className="text-sm text-gray-400">
