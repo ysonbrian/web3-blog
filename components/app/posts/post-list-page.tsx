@@ -41,7 +41,10 @@ export default function PostListPageComponent(props: {
 
   return (
     <>
-      <h1>Blog</h1>
+      <h3>Blog</h3>
+      <p className="text-lg text-zinc-500">
+        새로운 것을 배웠거나 공유하고 싶은 기술들을 정리합니다.
+      </p>
       <div className="flex md:space-x-12">
         <div className=" hidden h-full max-h-screen min-w-[280px] max-w-[280px] flex-wrap overflow-auto rounded bg-muted pt-5 font-sans md:flex">
           <div className="px-6 py-4">
@@ -49,7 +52,7 @@ export default function PostListPageComponent(props: {
               className={`uppercase ${props.tag === undefined ? "pointer-events-none text-emerald-600 dark:text-emerald-400" : "text-zinc-700 hover:text-emerald-500 dark:text-zinc-300 dark:hover:text-emerald-500"}`}
               href="/posts"
             >
-              All Posts
+              전체 게시글
             </a>
             <ul>
               {Object.keys(tags)

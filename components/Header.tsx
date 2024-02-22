@@ -25,12 +25,12 @@ export default function Header() {
         <Link href="/posts" className="sm:hidden">
           <RxChatBubble />
         </Link>
-        <Link href="/about" className="max-sm:hidden">
+        {/* <Link href="/about" className="max-sm:hidden">
           About
         </Link>
         <Link href="/about" className="sm:hidden">
           <RxPerson />
-        </Link>
+        </Link> */}
         <Link href="/projects" className="max-sm:hidden">
           Projects
         </Link>

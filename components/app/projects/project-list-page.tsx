@@ -16,7 +16,8 @@ export default function ProjectListPageComponent(props: {
   }
   return (
     <>
-      <h1>My Projects</h1>
+      <h3>프로젝트</h3>
+      <p className="text-lg text-zinc-500">활동을 기록합니다.</p>
       <div className="mx-auto grid  grid-cols-1 gap-4 md:grid-cols-3 lg:mx-0">
         <div className="grid grid-cols-1 gap-4">
           {projectList
